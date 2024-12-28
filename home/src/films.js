@@ -10,3 +10,8 @@ export const getFilmsById = (id) => {
     fetch(`${API_SERVER}/films/${id}`)
     .then((res) => res.json())
 }
+
+export const currency = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+});

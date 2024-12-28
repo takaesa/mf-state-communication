@@ -8,7 +8,7 @@ export default function HomeContent() {
     const filmsLink = 'http://localhost:8080/films'
 
     useEffect(() => {
-        fetch(filmsLink)
+        fetch(filmsLink, )
             .then((res) => res.json())
             .then((data) => {
                 setFilms(data);
@@ -21,10 +21,16 @@ export default function HomeContent() {
     }, []);
 
     return (
-        <div style={{ display: 'grid', gridTemplateColumns: '20% 20% 20% 20% 20%', gap: 5 }}>
+        <div style={{ display: 'grid', justifyItems:'center',gridTemplateColumns: '20% 20% 20% 20% 20%'}}>
             {films.map((film) => (
-                <div key={film.id}>
+                <div style={{justifyItems:'center'}} key={film.id}>
                     <img src={film.image} alt={film.name} />
+                    <div className="flex">
+                        <div className="flex-grow font-bold ">
+                            <a style={{display:'flex'   , textAlign:'center'}}>{film.name}</a>
+                        </div>
+                    </div>
+                    <div className="text-sm mt-4">{film.description}</div>
                 </div>
             ))}
         </div>

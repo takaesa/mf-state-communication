@@ -1,5 +1,7 @@
-import React, { Suspense, useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
+
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import "./index.scss";
 import Header from "home/Header";
@@ -9,15 +11,16 @@ import DetailContent from "./DetailContent";
 const App = () => {
 
   return (
-    <div className="mt-10 text-3xl mx-auto max-w-6xl">
-        <Header/>
-      <div className="my-10">
-        Film Detail
-        <DetailContent/>
-        {/* <FavoriteContent /> */}
+    <Router>
+      <div className="mt-10 text-3xl mx-auto" style={{ padding: '1rem 3rem' }}>
+        <div className="my-10">
+          <Switch>  
+            <Route path="/films/:id" Component={DetailContent}/>
+          </Switch>
+          {/* <FavoriteContent /> */}
+        </div>
       </div>
-      <Footer></Footer>
-    </div>
+    </Router>
   );
 }
 

@@ -3,14 +3,19 @@ const API_SERVER = "http://localhost:8080";
 export const getFilms = () => {
     fetch(`${API_SERVER}/films`)
     .then((res) => res.json())
+    .catch((error) => {
+        console.log(error);
+    });
 }
 
-export const getFilmsById = (id) => {
-    fetch(`${API_SERVER}/films/${id}`)
+export async function getFilmsById(id) {
+    fetch(`http://localhost:8080/films/${id}`)
     .then((res) => res.json())
+    .then(data => {
+        console.log("1");
+        console.log(data); 
+    })
+    .catch((error) => {
+        console.log(error);
+    });
 }
-
-export const currency = new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-});

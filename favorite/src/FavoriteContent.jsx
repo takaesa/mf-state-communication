@@ -35,6 +35,7 @@ const FavoriteContent = () => {
             </div>
             <div className='mt-5'>{film.description}</div>
             <div className='mt-5'>{film.type}</div>
+            <div>abc</div>
         </div>
     )
 }

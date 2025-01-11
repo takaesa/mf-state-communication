@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import "./index.scss";
 import Header from "home/Header";
@@ -12,18 +12,17 @@ const App = () => {
 
   return (
     <Router>
-      <div className="text-3xl" style={{ padding: '5rem' }}>
-        <Routes>
-          <Route path="/films/:filmId" element={<DetailContent />} />
-        </Routes>
-        <DetailContent />
+      <div className="mt-10 text-3xl mx-auto" style={{ padding: '1rem 3rem' }}>
+        <div className="my-10">
+          <Switch>  
+            <Route path="/films/:id" Component={DetailContent}/>
+          </Switch>
+          {/* <FavoriteContent /> */}
+        </div>
       </div>
     </Router>
-
   );
 }
-
-// ReactDOM.createRoot(document.getElementById("app")).render(<App />);
 
 const rootElement = document.getElementById("app")
 if (!rootElement) throw new Error("Failed to find the root element")

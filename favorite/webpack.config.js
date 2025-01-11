@@ -64,11 +64,18 @@ module.exports = (_, argv) => ({
     new ModuleFederationPlugin({
       name: "favorite",
       filename: "remoteEntry.js",
+<<<<<<< HEAD
       remotes: {
         home: "home@http://localhost:3000/remoteEntry.js",
         filmDetail: "filmDetail@http://localhost:3002/remoteEntry.js",
         favorite: "favorite@http://localhost:3001/remoteEntry.js",
       },
+=======
+      remotes: { 
+        home : 'home@http://localhost:3000/remoteEntry.js',
+        // favorite : 'favorite@http://localhost:3001/remoteEntry.js',
+        },
+>>>>>>> parent of 6753eb5 (create communication in favorite)
       exposes: {},
       shared: {
         ...deps,

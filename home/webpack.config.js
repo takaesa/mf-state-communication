@@ -65,12 +65,14 @@ module.exports = (_, argv) => ({
       name: "home",
       filename: "remoteEntry.js",
       remotes: {
-
+        home: 'home@http://localhost:3000/remoteEntry.js',
+        filmDetail: 'filmDetail@http://localhost:3002/remoteEntry.js',
+        favorite: 'favorite@http://localhost:3001/remoteEntry.js',
       },
       exposes: {
-        './Header' : './src/Header.jsx',
-        './Footer' : './src/Footer.jsx',
-        './films' : './src/films.js',
+        './Header': './src/Header.jsx',
+        './Footer': './src/Footer.jsx',
+        './films': './src/films.js',
       },
       shared: {
         ...deps,

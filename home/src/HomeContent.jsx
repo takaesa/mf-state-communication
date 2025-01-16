@@ -2,7 +2,12 @@ import React, { useState, useEffect } from "react";
 
 import { getFilms } from "./films";
 
+import { addToFavorite, useLoggedIn } from "favorite/favorite";
+import { favorite } from "../../favorite/src/favorite";
+
 export default function HomeContent() {
+    const loggedIn = useLoggedIn();
+
     const [films, setFilms] = useState([]);
 
     const filmsLink = 'http://localhost:8080/films'
@@ -30,6 +35,13 @@ export default function HomeContent() {
                         </div>
                     </div>
                     <div className="text-sm mt-4">{film.description}</div>
+                    {loggedIn && (
+                        <div style={{textAlign:'right', marginTop:'1rem'}}>
+                            <button style={{backgroundColor:'blue',}} onClick={()=>addToFavorite(film.id)} id={`addtofavorite_${film.id}`}>
+                                Add to Favorite
+                            </button>
+                        </div>
+                    )}
                 </div>
             ))}
         </div>

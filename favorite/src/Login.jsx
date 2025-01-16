@@ -29,7 +29,8 @@ const Login = () => {
                         borderWidth: 1,
                         borderColor: "blue",
                         widows: 300,
-                        top: "2rem",
+                        top: "1rem",
+                        right:'1rem'
                     }}
                 >
                     <input
@@ -43,6 +44,7 @@ const Login = () => {
                             padding: 2,
                             width: "100%",
                             borderRadius: "1rem",
+                            color: 'black'
                         }}
                     />
                     <input
@@ -56,6 +58,8 @@ const Login = () => {
                             padding: 2,
                             width: "100%",
                             borderRadius: "1rem",
+                            color: 'black'
+
                         }}
                     />
                     <button

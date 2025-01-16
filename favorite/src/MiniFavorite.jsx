@@ -22,7 +22,7 @@ const MiniFavorite = () => {
                 {items.length}
             </span>
             {showFavorite && (
-                <div style={{ position: 'absolute', padding: '1rem', border: '1px solid blue', width: 300, top: '2rem' }}>
+                <div style={{ position: 'absolute', padding: '1rem', border: '1px solid blue', width: 300, top: '1rem', right:'1rem' }}>
                     <div style={{ display: 'grid', gap: '.3rem', gridTemplateColumns: '1fr 3fr' }}>
                         {items.map((item) => (
                             <React.Fragment key={item.id}>
@@ -35,7 +35,7 @@ const MiniFavorite = () => {
                     <div style={{ display: 'flex' }}>
                         <button
                             id='clearFavorite'
-                            style={{ background: 'white', border: '1px solid green', borderRadius: '2rem' }}
+                            style={{ background: 'white', border: '1px solid green', borderRadius: '2rem', color:'black' }}
                             onClick={clearFavorite}>
                             Clear Favorite
                         </button>

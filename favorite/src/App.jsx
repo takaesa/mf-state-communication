@@ -1,14 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
+import "remixicon/fonts/remixicon.css"
+
 import "./index.scss";
+import FavoriteContent from "./FavoriteContent";
 
 const App = () => (
   <div className="mt-10 text-3xl mx-auto max-w-6xl">
-    <div>Name: favorite</div>
-    <div>Framework: react</div>
-    <div>Language: JavaScript</div>
-    <div>CSS: Tailwind</div>
+    <FavoriteContent></FavoriteContent>
   </div>
 );
 const rootElement = document.getElementById("app")

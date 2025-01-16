@@ -14,7 +14,7 @@ export const getFavorite = () =>
         },
     })
         .then((res) => res.json())
-        .then((data) => {
+        .then((res) => {
             favorite.next(res)
             return res;
         });

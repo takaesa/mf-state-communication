@@ -68,9 +68,16 @@ export function useLoggedIn() {
     const [loggedIn, setLoggedIn] = useState(!!jwt.value);
     useEffect(() => {
         setLoggedIn(!!jwt.value);
-        return jwt.subscribe((c) => {
+
+        const unsubscribe = jwt.subscribe(() => {
             setLoggedIn(!!jwt.value);
         });
+
+        return () => {
+            if (typeof unsubscribe === "function") {
+                unsubscribe();
+            }
+        };
     }, []);
     return loggedIn;
 }

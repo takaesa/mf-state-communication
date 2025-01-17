@@ -36,8 +36,18 @@ export default function HomeContent() {
                     </div>
                     <div className="text-sm mt-4">{film.description}</div>
                     {loggedIn && (
-                        <div style={{textAlign:'right', marginTop:'1rem'}}>
-                            <button style={{backgroundColor:'blue',}} onClick={()=>addToFavorite(film.id)} id={`addtofavorite_${film.id}`}>
+                        <div style={{ textAlign: 'center', marginTop: '1rem' }}>
+                            <button
+                                style={{
+                                    color: 'white',
+                                    backgroundColor: 'green',
+                                    padding: '.5rem 1.2rem',
+                                    borderRadius: '1rem',
+                                    fontSize: 18,
+                                    backgroundColor: 'black',
+                                    marginTop: '1rem'
+                                }}
+                                onClick={() => addToFavorite(film.id)} id={`addtofavorite_${film.id}`}>
                                 Add to Favorite
                             </button>
                         </div>

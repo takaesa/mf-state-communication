@@ -25,12 +25,14 @@ const Login = () => {
                 <div
                     style={{
                         position: "absolute",
-                        padding: 5,
+                        padding: '1rem',
                         borderWidth: 1,
-                        borderColor: "blue",
-                        widows: 300,
-                        top: "1rem",
-                        right:'1rem'
+                        borderColor: "#2E7EA3",
+                        width: 300,
+                        top: "2rem",
+                        right: '1rem',
+                        borderRadius: '1rem',
+                        backgroundColor:'white'
                     }}
                 >
                     <input
@@ -43,7 +45,7 @@ const Login = () => {
                             border: "1px solid gray",
                             padding: 2,
                             width: "100%",
-                            borderRadius: "1rem",
+                            borderRadius: ".8rem",
                             color: 'black'
                         }}
                     />
@@ -57,17 +59,20 @@ const Login = () => {
                             border: "1px solid gray",
                             padding: 2,
                             width: "100%",
-                            borderRadius: "1rem",
-                            color: 'black'
-
+                            borderRadius: ".8rem",
+                            color: 'black',
+                            marginTop:'1rem'
                         }}
                     />
                     <button
                         style={{
                             color: 'white',
                             backgroundColor: 'green',
-                            padding: '1rem 2rem',
-                            borderRadius: '1rem'
+                            padding:'.5rem 1.2rem',
+                            borderRadius: '1rem',
+                            fontSize: 18,
+                            backgroundColor: 'black',
+                            marginTop:'1rem'
                         }}
                         onClick={() => login(username, password)}
                         id="loginbtn">

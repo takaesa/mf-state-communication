@@ -9,7 +9,7 @@ const printCompilationMessage = require('./compilation.config.js');
 
 module.exports = (_, argv) => ({
   output: {
-    publicPath: "http://localhost:3001/",
+    publicPath: "http://localhost:3003/",
   },
 
   resolve: {
@@ -17,7 +17,7 @@ module.exports = (_, argv) => ({
   },
 
   devServer: {
-    port: 3001,
+    port: 3003,
     historyApiFallback: true,
     watchFiles: [path.resolve(__dirname, 'src')],
     onListening: function (devServer) {
@@ -62,27 +62,21 @@ module.exports = (_, argv) => ({
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "favorite",
+      name: "addtofavorite",
       filename: "remoteEntry.js",
       remotes: {
-        home : 'home@http://localhost:3000/remoteEntry.js',
-        filmDetail : 'filmDetail@http://localhost:3002/remoteEntry.js',
-        favorite : 'favorite@http://localhost:3001/remoteEntry.js',
+        favorite: 'favorite@http://localhost:3001/remoteEntry.js',
+        addtofavorite : 'addtofavorite@http://localhost:3003/remoteEntry.js',
       },
       exposes: {
-        "./favorite" : "./src/favorite.js",
-        "./Login" : "./src/Login.jsx",
-        "./MiniFavorite" : "./src/MiniFavorite.jsx",
+        './AddToFavorite': "./src/AddToFavorite.jsx",
+        './placeAddToFavorite': "./src/placeAddToFavorite.js",
       },
       shared: {
         ...deps,
-        react: {
+        "solid-js": {
           singleton: true,
-          requiredVersion: deps.react,
-        },
-        "react-dom": {
-          singleton: true,
-          requiredVersion: deps["react-dom"],
+          requiredVersion: deps["solid-js"],
         },
       },
     }),

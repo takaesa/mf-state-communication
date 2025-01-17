@@ -73,6 +73,7 @@ module.exports = (_, argv) => ({
         "./favorite" : "./src/favorite.js",
         "./Login" : "./src/Login.jsx",
         "./MiniFavorite" : "./src/MiniFavorite.jsx",
+        "./FavoriteContent" : "./src/FavoriteContent.jsx",
       },
       shared: {
         ...deps,

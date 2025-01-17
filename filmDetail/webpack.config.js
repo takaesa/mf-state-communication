@@ -70,7 +70,10 @@ module.exports = (_, argv) => ({
         addtofavorite : 'addtofavorite@http://localhost:3003/remoteEntry.js',
         filmDetail : 'filmDetail@http://localhost:3002/remoteEntry.js',
       },
-      exposes: {},
+      exposes: {
+        "./DetailContent" : "./src/DetailContent.jsx"
+
+      },
       shared: {
         ...deps,
         react: {

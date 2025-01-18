@@ -26,7 +26,7 @@ const MiniFavorite = () => {
         id="showFavorite_span"
       >
         <i
-          className="ri-shopping-cart-2-fill"
+          className="ri-heart-line"
           style={{ fontSize: 24 }}
           id="showFavorite"
         ></i>

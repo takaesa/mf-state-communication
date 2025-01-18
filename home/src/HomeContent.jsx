@@ -26,7 +26,7 @@ export default function HomeContent() {
     }, []);
 
     return (
-        <div style={{ display: 'grid', justifyItems: 'center', gridTemplateColumns: '20% 20% 20% 20% 20%' }}>
+        <div style={{ display: 'grid', justifyItems: 'center', gridTemplateColumns: '20% 20% 20% 20% 20%',marginTop:'2rem' }}>
             {films.map((film) => (
                 <div style={{ justifyItems: 'center' }} key={film.id}>
                     <Link to={`/films/${film.id}`}>
@@ -35,11 +35,11 @@ export default function HomeContent() {
                     <div className="flex">
                         <div className="flex-grow font-bold ">
                             <Link to={`/films/${film.id}`}>
-                                <a style={{ display: 'flex', textAlign: 'center' }}>{film.name}</a>
+                                <a style={{ textAlign: 'center', marginTop:'1rem', textOverflow:'ellipsis', overflow:'hidden',whiteSpace:'nowrap'}}>{film.name}</a>
                             </Link>
                         </div>
                     </div>
-                    <div className="text-sm mt-4">{film.description}</div>
+                    <div className="text-sm mt-4" style={{padding:'1rem 2rem'}}>{film.description}</div>
                     {loggedIn && (
                         <div style={{ textAlign: 'center', marginTop: '1rem' }}>
                             <button
